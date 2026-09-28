@@ -16,4 +16,4 @@ class Persona(SQLModel, table=True):
     age: int | None = Field(default=None, index=True)
 
     oficina_id: int | None = Field(default=None, foreign_key="oficina.id")
-    oficina: | None = Relationship(back_populates="personas")
+    oficina: Oficina | None = Relationship(back_populates="personas")
